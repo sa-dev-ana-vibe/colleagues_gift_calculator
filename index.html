@@ -4,46 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Калькулятор подарка коллеге</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="page">
-      <section class="card card-intro">
-        <p class="eyebrow">Коллегиальный этикет</p>
+      <section class="card">
         <h1>Калькулятор подарка на день рождения</h1>
-        <p class="formula">
-          Формула: <strong>(X / 500 + Y / 100) × K × N</strong>
+        <p class="formula-base">
+          Базовая формула: <strong>(X / 500 + Y / 100) × K × N</strong>
         </p>
 
-        <div class="rules">
-          <h2>Что означают коэффициенты</h2>
-
-          <div class="rules-grid">
-            <article>
-              <h3>K — рабочая близость</h3>
-              <ul>
-                <li><strong>0,5</strong> — другой отдел</li>
-                <li><strong>1</strong> — ваш отдел, другая функция</li>
-                <li><strong>1,5</strong> — ваша функция</li>
-                <li><strong>2</strong> — руководитель или подчиненный</li>
-              </ul>
-            </article>
-
-            <article>
-              <h3>N — личная близость</h3>
-              <ul>
-                <li><strong>0,5</strong> — видитесь реже раза в неделю</li>
-                <li><strong>1</strong> — вместе обедаете</li>
-                <li><strong>1,5</strong> — иногда выпиваете вместе</li>
-                <li><strong>2</strong> — ходите друг к другу в гости</li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="card card-calc">
-        <h2>Рассчитать сумму</h2>
         <form id="calculatorForm" novalidate>
           <label class="field">
             <span>X — ваша зарплата</span>
@@ -76,33 +47,41 @@
           <label class="field">
             <span>K — рабочая близость</span>
             <select id="workClose" name="workClose">
-              <option value="0.5">0,5 — другой отдел</option>
-              <option value="1" selected>1 — ваш отдел, другая функция</option>
-              <option value="1.5">1,5 — ваша функция</option>
-              <option value="2">2 — руководитель или подчиненный</option>
+              <option value="0.5">Работает в другом отделе</option>
+              <option value="1" selected>В вашем отделе, другая функция</option>
+              <option value="1.5">В вашей функции</option>
+              <option value="2">Руководитель или подчиненный</option>
             </select>
           </label>
 
           <label class="field">
             <span>N — личная близость</span>
             <select id="personalClose" name="personalClose">
-              <option value="0.5">0,5 — редко видитесь</option>
-              <option value="1" selected>1 — вместе обедаете</option>
-              <option value="1.5">1,5 — иногда выпиваете вместе</option>
-              <option value="2">2 — ходите в гости</option>
+              <option value="0.5">Видитесь реже раза в неделю</option>
+              <option value="1" selected>Вместе обедаете</option>
+              <option value="1.5">Иногда выпиваете вместе</option>
+              <option value="2">Ходите друг к другу в гости</option>
             </select>
           </label>
-
-          <button type="submit" class="button">Посчитать</button>
         </form>
 
+        <section class="live-formula" aria-live="polite">
+          <p class="live-formula__label">Формула сейчас</p>
+          <p id="liveFormula" class="live-formula__value">
+            (X / 500 + Y / 100) × K × N = —
+          </p>
+        </section>
+
         <section id="result" class="result" aria-live="polite">
-          <p class="result__hint">Введите значения и нажмите «Посчитать».</p>
+          <p class="result__hint">
+            Введите X и Y — сумма посчитается автоматически.
+          </p>
         </section>
 
         <p class="privacy-note">
-          Все вычисления выполняются только в вашем браузере. Никакие данные не
-          сохраняются и не отправляются.
+          Все вычисления выполняются только в вашем браузере. 
+          Мы не собираем ваши данные и никому их не передаём.</br>
+          Калькулятор основан <a href="https://t.me/papagrowth/315">на посте Антона Лугинина</a>
         </p>
       </section>
     </main>
