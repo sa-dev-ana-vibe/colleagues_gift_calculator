@@ -64,12 +64,6 @@ h1 {
   font-size: clamp(0.97rem, 2.2vw, 1.06rem);
 }
 
-.formula-note {
-  margin: 0.45rem 0 0;
-  color: var(--text-soft);
-  font-size: 0.92rem;
-}
-
 #calculatorForm {
   margin-top: 1.15rem;
   display: grid;
@@ -84,12 +78,6 @@ h1 {
 .field > label {
   color: var(--text-soft);
   font-size: 0.95rem;
-}
-
-.field-hint {
-  margin: 0;
-  color: var(--text-soft);
-  font-size: 0.82rem;
 }
 
 input,
@@ -234,7 +222,6 @@ select[aria-invalid="true"] {
   }
 
   .formula-base,
-  .formula-note,
   .field > label,
   .result__hint,
   .result__secondary {
