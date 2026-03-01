@@ -1,0 +1,133 @@
+{
+    "workbench.colorCustomizations": {
+        "editor.background": "#F7EDF2",
+        "editor.foreground": "#502138",
+        "sideBar.background": "#F2E3EB",
+        "sideBar.foreground": "#502138",
+        "activityBar.background": "#CC1489",
+        "activityBar.foreground": "#FFFFFF",
+        "activityBar.border": "#D8B6C7",
+        "statusBar.background": "#EB1EA0",
+        "statusBar.foreground": "#1A1A1A",
+        "statusBar.border": "#D8B6C7",
+        "titleBar.activeBackground": "#F2E3EB",
+        "titleBar.activeForeground": "#502138",
+        "titleBar.inactiveBackground": "#F7EDF2",
+        "titleBar.inactiveForeground": "#9D4D75",
+        "editorGroup.background": "#F7EDF2",
+        "editorGroup.border": "#D8B6C7",
+        "editorGroupHeader.tabsBackground": "#F2E3EB",
+        "tab.activeBackground": "#F2E3EB",
+        "tab.activeForeground": "#502138",
+        "tab.activeBorderTop": "#EB1EA0",
+        "tab.inactiveBackground": "#F7EDF2",
+        "tab.inactiveForeground": "#9D4D75",
+        "tab.unfocusedActiveBackground": "#F2E3EB",
+        "tab.unfocusedActiveForeground": "#502138",
+        "tab.unfocusedInactiveBackground": "#F7EDF2",
+        "tab.unfocusedInactiveForeground": "#9D4D75",
+        "tab.border": "#D8B6C7",
+        "panel.background": "#F2E3EB",
+        "panel.border": "#D8B6C7",
+        "sideBar.border": "#D8B6C7",
+        "list.activeSelectionBackground": "#F2BADE",
+        "list.activeSelectionForeground": "#502138",
+        "list.activeSelectionIconForeground": "#502138",
+        "list.inactiveSelectionBackground": "#F1E4EB",
+        "list.inactiveSelectionForeground": "#502138",
+        "list.inactiveSelectionIconForeground": "#502138",
+        "list.hoverBackground": "#ECD9E3",
+        "list.hoverForeground": "#502138",
+        "list.focusBackground": "#F2BADE",
+        "list.focusForeground": "#502138",
+        "descriptionForeground": "#502138",
+        "editorLineNumber.foreground": "#9D4D75",
+        "editorCursor.foreground": "#E3457F"
+    },
+    "editor.tokenColorCustomizations": {
+        "comments": "#9D4D75",
+        "strings": "#DD2C3E",
+        "keywords": "#EB1EA0",
+        "numbers": "#CB29D6",
+        "functions": "#E3457F",
+        "types": "#CB29D6",
+        "variables": "#502138",
+        "textMateRules": [
+            {
+                "name": "Markdown headings",
+                "scope": [
+                    "markup.heading.markdown",
+                    "entity.name.section.markdown",
+                    "punctuation.definition.heading.markdown"
+                ],
+                "settings": {
+                    "foreground": "#E3457F"
+                }
+            },
+            {
+                "name": "Markdown bold",
+                "scope": [
+                    "markup.bold.markdown",
+                    "punctuation.definition.bold.markdown"
+                ],
+                "settings": {
+                    "foreground": "#EB1EA0"
+                }
+            },
+            {
+                "name": "Markdown emphasis",
+                "scope": [
+                    "markup.italic.markdown",
+                    "punctuation.definition.italic.markdown"
+                ],
+                "settings": {
+                    "foreground": "#DD2C3E"
+                }
+            },
+            {
+                "name": "Markdown quote and list markers",
+                "scope": [
+                    "markup.quote.markdown",
+                    "punctuation.definition.quote.begin.markdown",
+                    "punctuation.definition.list.begin.markdown"
+                ],
+                "settings": {
+                    "foreground": "#9D4D75"
+                }
+            },
+            {
+                "name": "JSON property names",
+                "scope": [
+                    "support.type.property-name.json",
+                    "support.type.property-name.jsonc",
+                    "meta.object-literal.key.json",
+                    "meta.object-literal.key.jsonc",
+                    "meta.object-literal.key.json string.quoted.double.json",
+                    "meta.object-literal.key.jsonc string.quoted.double.jsonc"
+                ],
+                "settings": {
+                    "foreground": "#E3457F"
+                }
+            },
+            {
+                "name": "JSON property punctuation",
+                "scope": [
+                    "punctuation.support.type.property-name.begin.json",
+                    "punctuation.support.type.property-name.end.json",
+                    "punctuation.support.type.property-name.begin.jsonc",
+                    "punctuation.support.type.property-name.end.jsonc"
+                ],
+                "settings": {
+                    "foreground": "#9D4D75"
+                }
+            }
+        ]
+    },
+    "editor.semanticTokenColorCustomizations": {
+        "class": "#CB29D6",
+        "function": "#E3457F",
+        "parameter": "#DD2C3E",
+        "property": "#EB1EA0",
+        "variable": "#502138"
+    }
+}

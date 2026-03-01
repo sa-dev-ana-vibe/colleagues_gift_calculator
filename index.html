@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Калькулятор подарка коллеге</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card card-intro">
+        <p class="eyebrow">Коллегиальный этикет</p>
+        <h1>Калькулятор подарка на день рождения</h1>
+        <p class="formula">
+          Формула: <strong>(X / 500 + Y / 100) × K × N</strong>
+        </p>
+
+        <div class="rules">
+          <h2>Что означают коэффициенты</h2>
+
+          <div class="rules-grid">
+            <article>
+              <h3>K — рабочая близость</h3>
+              <ul>
+                <li><strong>0,5</strong> — другой отдел</li>
+                <li><strong>1</strong> — ваш отдел, другая функция</li>
+                <li><strong>1,5</strong> — ваша функция</li>
+                <li><strong>2</strong> — руководитель или подчиненный</li>
+              </ul>
+            </article>
+
+            <article>
+              <h3>N — личная близость</h3>
+              <ul>
+                <li><strong>0,5</strong> — видитесь реже раза в неделю</li>
+                <li><strong>1</strong> — вместе обедаете</li>
+                <li><strong>1,5</strong> — иногда выпиваете вместе</li>
+                <li><strong>2</strong> — ходите друг к другу в гости</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="card card-calc">
+        <h2>Рассчитать сумму</h2>
+        <form id="calculatorForm" novalidate>
+          <label class="field">
+            <span>X — ваша зарплата</span>
+            <input
+              id="salary"
+              name="salary"
+              type="number"
+              min="0"
+              step="1000"
+              inputmode="numeric"
+              placeholder="Например, 300000"
+              required
+            />
+          </label>
+
+          <label class="field">
+            <span>Y — сколько вам дарили на ваш ДР</span>
+            <input
+              id="received"
+              name="received"
+              type="number"
+              min="0"
+              step="100"
+              inputmode="numeric"
+              placeholder="Например, 15000"
+              required
+            />
+          </label>
+
+          <label class="field">
+            <span>K — рабочая близость</span>
+            <select id="workClose" name="workClose">
+              <option value="0.5">0,5 — другой отдел</option>
+              <option value="1" selected>1 — ваш отдел, другая функция</option>
+              <option value="1.5">1,5 — ваша функция</option>
+              <option value="2">2 — руководитель или подчиненный</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>N — личная близость</span>
+            <select id="personalClose" name="personalClose">
+              <option value="0.5">0,5 — редко видитесь</option>
+              <option value="1" selected>1 — вместе обедаете</option>
+              <option value="1.5">1,5 — иногда выпиваете вместе</option>
+              <option value="2">2 — ходите в гости</option>
+            </select>
+          </label>
+
+          <button type="submit" class="button">Посчитать</button>
+        </form>
+
+        <section id="result" class="result" aria-live="polite">
+          <p class="result__hint">Введите значения и нажмите «Посчитать».</p>
+        </section>
+
+        <p class="privacy-note">
+          Все вычисления выполняются только в вашем браузере. Никакие данные не
+          сохраняются и не отправляются.
+        </p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
