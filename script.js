@@ -1,5 +1,5 @@
 (function () {
-  const MAX_SALARY = 10000000000;
+  const MAX_AMOUNT = 100000000000000;
 
   const form = document.getElementById("calculatorForm");
   const resultBlock = document.getElementById("result");
@@ -146,15 +146,24 @@
       return;
     }
 
-    if (salary !== null && salary > MAX_SALARY) {
+    if (salary !== null && salary > MAX_AMOUNT) {
       updateFormulaDetails({ salary, received, work, personal });
-      renderError("Значение выходит за пределы расчёта. Максимум — 10 000 000 000.", [salaryInput]);
+      renderError("Значение выходит за пределы расчёта. Максимум — 100 000 000 000 000.", [salaryInput]);
       return;
     }
 
     if (received !== null && received < 0) {
       updateFormulaDetails({ salary, received, work, personal });
       renderError("Сумма подарка не может быть отрицательной.", [receivedInput]);
+      return;
+    }
+
+    if (received !== null && received > MAX_AMOUNT) {
+      updateFormulaDetails({ salary, received, work, personal });
+      renderError(
+        "Сумма подарка выходит за пределы расчёта. Максимум — 100 000 000 000 000.",
+        [receivedInput],
+      );
       return;
     }
 
