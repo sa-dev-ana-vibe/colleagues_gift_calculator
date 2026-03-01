@@ -12,76 +12,77 @@
       <section class="card">
         <h1>Калькулятор подарка на день рождения</h1>
         <p class="formula-base">
-          Базовая формула: <strong>(X / 500 + Y / 100) × K × N</strong>
+          Чем выше зарплата и чем ближе отношения — тем больше сумма.
         </p>
 
         <form id="calculatorForm" novalidate>
-          <label class="field">
-            <span>X — ваша зарплата</span>
+          <div class="field">
+            <label for="salary">Ваша зарплата в месяц</label>
             <input
               id="salary"
               name="salary"
-              type="number"
-              min="0"
-              step="1000"
+              type="text"
+              pattern="[0-9\s,\.]+"
               inputmode="numeric"
-              placeholder="Например, 300000"
+              placeholder="Например, 300 000"
+              aria-describedby="salaryHint"
               required
             />
-          </label>
+          </div>
 
-          <label class="field">
-            <span>Y — сколько вам дарили на ваш ДР</span>
+          <div class="field">
+            <label for="received">Подарок от коллег на прошлый ДР (всего)</label>
             <input
               id="received"
               name="received"
-              type="number"
-              min="0"
-              step="100"
+              type="text"
+              pattern="[0-9\s,\.]+"
               inputmode="numeric"
-              placeholder="Например, 15000"
+              placeholder="Например, 15 000"
               required
             />
-          </label>
+          </div>
 
-          <label class="field">
-            <span>K — рабочая близость</span>
+          <div class="field">
+            <label for="workClose">Рабочая близость</label>
             <select id="workClose" name="workClose">
-              <option value="0.5">Работает в другом отделе</option>
-              <option value="1" selected>В вашем отделе, другая функция</option>
-              <option value="1.5">В вашей функции</option>
+              <option value="0.5">Работаете в разных отделах</option>
+              <option value="1" selected>Коллеги по отделу</option>
+              <option value="1.5">Работаете в одной команде</option>
               <option value="2">Руководитель или подчиненный</option>
             </select>
-          </label>
+          </div>
 
-          <label class="field">
-            <span>N — личная близость</span>
+          <div class="field">
+            <label for="personalClose">Личная близость</label>
             <select id="personalClose" name="personalClose">
               <option value="0.5">Видитесь реже раза в неделю</option>
               <option value="1" selected>Вместе обедаете</option>
               <option value="1.5">Иногда выпиваете вместе</option>
               <option value="2">Ходите друг к другу в гости</option>
             </select>
-          </label>
+          </div>
         </form>
 
-        <section class="live-formula" aria-live="polite">
-          <p class="live-formula__label">Формула сейчас</p>
-          <p id="liveFormula" class="live-formula__value">
-            (X / 500 + Y / 100) × K × N = —
+        <section id="result" class="result" aria-live="polite" role="status">
+          <p class="result__hint">
+            Введите зарплату и сумму подарка — сумма посчитается автоматически.
           </p>
         </section>
 
-        <section id="result" class="result" aria-live="polite">
-          <p class="result__hint">
-            Введите X и Y — сумма посчитается автоматически.
+        <details class="calc-details">
+          <summary>Показать расчёт</summary>
+          <p id="detailedFormula" class="result__formula">
+            Заполните значения, чтобы увидеть подробности расчёта.
           </p>
-        </section>
+        </details>
 
         <p class="privacy-note">
-          Все вычисления выполняются только в вашем браузере. 
-          Мы не собираем ваши данные и никому их не передаём.</br>
-          Калькулятор основан <a href="https://t.me/papagrowth/315">на посте Антона Лугинина</a>
+          Введённые значения не отправляются на сервер и не сохраняются. Расчёт
+          выполняется локально в браузере.<br />
+          Калькулятор носит рекомендательный характер и не является финансовой
+          рекомендацией.<br />
+          Калькулятор основан <a href="https://t.me/papagrowth/315"  target="_blank"  rel="noopener noreferrer">на посте Антона Лугинина</a>
         </p>
       </section>
     </main>

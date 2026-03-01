@@ -64,6 +64,12 @@ h1 {
   font-size: clamp(0.97rem, 2.2vw, 1.06rem);
 }
 
+.formula-note {
+  margin: 0.45rem 0 0;
+  color: var(--text-soft);
+  font-size: 0.92rem;
+}
+
 #calculatorForm {
   margin-top: 1.15rem;
   display: grid;
@@ -75,9 +81,15 @@ h1 {
   gap: 0.35rem;
 }
 
-.field > span {
+.field > label {
   color: var(--text-soft);
   font-size: 0.95rem;
+}
+
+.field-hint {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.82rem;
 }
 
 input,
@@ -99,25 +111,10 @@ select:focus {
   box-shadow: 0 0 0 4px rgba(129, 99, 255, 0.18);
 }
 
-.live-formula {
-  margin-top: 1rem;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 0.85rem 0.95rem;
-  background: var(--result-bg);
-}
-
-.live-formula__label {
-  margin: 0;
-  color: var(--text-soft);
-  font-size: 0.88rem;
-}
-
-.live-formula__value {
-  margin: 0.35rem 0 0;
-  font-size: clamp(0.95rem, 2.2vw, 1rem);
-  font-weight: 500;
-  overflow-wrap: anywhere;
+input[aria-invalid="true"],
+select[aria-invalid="true"] {
+  border-color: rgba(179, 38, 30, 0.52);
+  box-shadow: 0 0 0 4px rgba(179, 38, 30, 0.14);
 }
 
 .result {
@@ -129,6 +126,10 @@ select:focus {
   background: rgba(255, 255, 255, 0.82);
   display: grid;
   align-content: center;
+}
+
+.result.is-fading {
+  animation: result-fade 0.2s ease;
 }
 
 .result__hint {
@@ -147,10 +148,17 @@ select:focus {
   color: var(--text-soft);
 }
 
+.result__emotion {
+  margin: 0.45rem 0 0;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+
 .result__formula {
   margin: 0.55rem 0 0;
   color: var(--text-soft);
   font-size: 0.91rem;
+  overflow-wrap: anywhere;
 }
 
 .result.is-error {
@@ -159,9 +167,34 @@ select:focus {
   color: var(--error);
 }
 
+.calc-details {
+  margin-top: 0.55rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.6rem 0.85rem;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.calc-details > summary {
+  cursor: pointer;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+.calc-details > summary:focus-visible {
+  outline: 2px solid rgba(129, 99, 255, 0.4);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
 .privacy-note {
   margin: 0.9rem 0 0;
   font-size: 0.86rem;
+  color: var(--text-soft);
+}
+
+.privacy-note a {
   color: var(--text-soft);
 }
 
@@ -173,6 +206,15 @@ select:focus {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes result-fade {
+  from {
+    opacity: 0.55;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -192,7 +234,8 @@ select:focus {
   }
 
   .formula-base,
-  .field > span,
+  .formula-note,
+  .field > label,
   .result__hint,
   .result__secondary {
     font-size: 0.92rem;
