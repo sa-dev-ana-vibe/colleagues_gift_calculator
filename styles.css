@@ -51,11 +51,48 @@ body {
   animation: rise 0.45s ease both;
 }
 
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
 h1 {
   margin: 0;
   font-size: clamp(1.42rem, 2.9vw, 2.05rem);
   line-height: 1.2;
   font-weight: 700;
+}
+
+.lang-switch {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.16rem;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.lang-switch__btn {
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-soft);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.24rem 0.55rem;
+}
+
+.lang-switch__btn.is-active {
+  background: rgba(129, 99, 255, 0.14);
+  color: var(--text-main);
+}
+
+.lang-switch__btn:focus-visible {
+  outline: 2px solid rgba(129, 99, 255, 0.45);
+  outline-offset: 1px;
 }
 
 .formula-base {
@@ -215,6 +252,10 @@ select[aria-invalid="true"] {
   .card {
     border-radius: 18px;
     padding: 0.95rem;
+  }
+
+  .card-top {
+    align-items: center;
   }
 
   h1 {

@@ -10,14 +10,35 @@
   <body>
     <main class="page">
       <section class="card">
-        <h1>Калькулятор подарка на день рождения</h1>
-        <p class="formula-base">
-          Чем выше зарплата и чем ближе отношения — тем больше сумма.
+        <div class="card-top">
+          <h1 data-i18n="title">Калькулятор подарка на день рождения</h1>
+          <div class="lang-switch" role="group" aria-label="Language switch">
+            <button
+              class="lang-switch__btn is-active"
+              type="button"
+              data-lang="ru"
+              aria-pressed="true"
+            >
+              RU
+            </button>
+            <button
+              class="lang-switch__btn"
+              type="button"
+              data-lang="en"
+              aria-pressed="false"
+            >
+              EN
+            </button>
+          </div>
+        </div>
+        <p class="formula-base" data-i18n="subtitle">
+          Чем выше зарплата и чем ближе отношения — тем больше рекомендуемый
+          вклад.
         </p>
 
         <form id="calculatorForm" novalidate>
           <div class="field">
-            <label for="salary">Ваша зарплата в месяц</label>
+            <label for="salary" data-i18n="salaryLabel">Ваша зарплата в месяц</label>
             <input
               id="salary"
               name="salary"
@@ -25,13 +46,15 @@
               pattern="[0-9\s,\.]+"
               inputmode="numeric"
               placeholder="Например, 300 000"
-              aria-describedby="salaryHint"
+              data-i18n-placeholder="salaryPlaceholder"
               required
             />
           </div>
 
           <div class="field">
-            <label for="received">Подарок от коллег на прошлый ДР (всего)</label>
+            <label for="received" data-i18n="receivedLabel"
+              >Подарок от коллег на прошлый ДР (всего)</label
+            >
             <input
               id="received"
               name="received"
@@ -39,12 +62,13 @@
               pattern="[0-9\s,\.]+"
               inputmode="numeric"
               placeholder="Например, 15 000"
+              data-i18n-placeholder="receivedPlaceholder"
               required
             />
           </div>
 
           <div class="field">
-            <label for="workClose">Рабочая близость</label>
+            <label for="workClose" data-i18n="workLabel">Рабочая близость</label>
             <select id="workClose" name="workClose">
               <option value="0.5">Работаете в разных отделах</option>
               <option value="1" selected>Коллеги по отделу</option>
@@ -54,7 +78,7 @@
           </div>
 
           <div class="field">
-            <label for="personalClose">Личная близость</label>
+            <label for="personalClose" data-i18n="personalLabel">Личная близость</label>
             <select id="personalClose" name="personalClose">
               <option value="0.5">Видитесь реже раза в неделю</option>
               <option value="1" selected>Вместе обедаете</option>
@@ -65,24 +89,36 @@
         </form>
 
         <section id="result" class="result" aria-live="polite" role="status">
-          <p class="result__hint">
-            Введите зарплату и сумму подарка — сумма посчитается автоматически.
+          <p class="result__hint" data-i18n="resultInitial">
+            Введите зарплату и сумму подарка — рекомендация обновится
+            автоматически.
           </p>
         </section>
 
         <details class="calc-details">
-          <summary>Показать расчёт</summary>
-          <p id="detailedFormula" class="result__formula">
-            Заполните значения, чтобы увидеть подробности расчёта.
+          <summary data-i18n="detailsSummary">Показать расчёт</summary>
+          <p id="detailedFormula" class="result__formula" data-i18n="detailsInitial">
+            Заполните значения, чтобы увидеть расчёт.
           </p>
         </details>
 
         <p class="privacy-note">
-          Введённые значения не отправляются на сервер и не сохраняются. Расчёт
-          выполняется локально в браузере.<br />
-          Калькулятор носит рекомендательный характер и не является финансовой
-          рекомендацией.<br />
-          Калькулятор основан <a href="https://t.me/papagrowth/315"  target="_blank"  rel="noopener noreferrer">на посте Антона Лугинина</a>
+          <span data-i18n="footerPrivacy"
+            >Введённые значения не отправляются на сервер и не сохраняются.
+            Расчёт выполняется локально в браузере.</span
+          ><br />
+          <span data-i18n="footerDisclaimer"
+            >Калькулятор носит рекомендательный характер и не является
+            финансовой рекомендацией.</span
+          ><br />
+          <span data-i18n="footerBasedOn">Основано на посте</span>
+          <a
+            href="https://t.me/papagrowth/315"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="footerBasedOnLink"
+            >Антона Лугинина</a
+          >
         </p>
       </section>
     </main>
